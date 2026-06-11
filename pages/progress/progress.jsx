@@ -10,7 +10,7 @@ function progress() {
         <ScrollView style={[styles.background, { paddingTop: insets.top }]}>
             <View style={styles.header}>
                 <Text style={styles.header_text}>Progress</Text>
-                <ScreenOnTime/>
+                {/* <ScreenOnTime/> */}
             </View>
         </ScrollView>
     </SafeAreaProvider>

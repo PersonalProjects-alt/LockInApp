@@ -23,6 +23,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import User from './assets/Icons/user.png';
+import HomeIcon from './assets/Icons/home.png'
+import FocusIcon from './assets/Icons/focus.png'
+import moreIcon from './assets/Icons/more.png'
 import Plus from './assets/Icons/add.png'
 import HourGlass from './assets/Icons/hourglass.png'
 import Chart from './assets/Icons/chart.png'
@@ -38,20 +41,20 @@ function MainTabs() {
           screenOptions={{
             headerShown: false,
             tabBarStyle: {
-              backgroundColor: '#414141',
+              backgroundColor: '#090B0A',
               position: 'absolute',
               bottom: 25,
-              marginLeft: 45,
-              marginRight: 45,
-              gap: 10,
-              borderColor: '#C3C3C3',
+              marginLeft: 70,
+              marginRight: 70,
+              gap: 1,
+              borderColor: '#141414',
               borderWidth: 0.2,
               height: 60,
-              borderRadius: 50,
+              borderRadius: 20,
               borderTopWidth: 0,
               justifyContent: 'center',
               alignItems: 'center',
-              paddingHorizontal: 10,
+              paddingHorizontal: 1,
               opacity: 0.9,
 
             },
@@ -67,13 +70,13 @@ function MainTabs() {
             options={{
               tabBarIcon: ({ focused }) => (
                 <View>
-                  <Image source={User} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
+                  <Image source={HomeIcon} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
                 </View>
               )
             }}
           />
 
-          <Tab.Screen
+          {/* <Tab.Screen
             name="Progress"
             component={Progress}
             options={{
@@ -83,7 +86,7 @@ function MainTabs() {
                 </View>
               )
             }}
-          />
+          /> */}
 
           <Tab.Screen
             name="FocusSession"
@@ -91,7 +94,7 @@ function MainTabs() {
             options={{
               tabBarIcon: ({ focused }) => (
                 <View>
-                  <Image source={Plus} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
+                  <Image source={FocusIcon} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
                 </View>
               )
             }}
@@ -103,7 +106,7 @@ function MainTabs() {
             options={{
               tabBarIcon: ({ focused }) => (
                 <View>
-                  <Image source={HourGlass} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
+                  <Image source={moreIcon} style={[styles.iconImageStyles, { tintColor: focused ? '#FFFFFF' : '#605D5D' }]} />
                 </View>
               )
             }}

@@ -12,13 +12,13 @@ function addFocusSession() {
       <ScrollView style={[styles.background, { paddingTop: insets.top }]}>
         <View style={styles.header}>
           <Text style={styles.header_text}>Focus Task</Text>
-          <View style={styles.addTimeContainer}>
+          {/* <View style={styles.addTimeContainer}>
             <AddTime label="Start" time="11:00am" />
             <AddTime label="End" time="12:00" />
-          </View>
+          </View> */}
           <BlockedApps />
-          <BlockedTaskInfo />
-          <View style={styles.buttonView}>
+          {/* <BlockedTaskInfo /> */}
+          {/* <View style={styles.buttonView}>
             <TouchableOpacity style={styles.buttonStyle} onPress={() => console.log('Cancel')}>
               <Text style={styles.buttonText}>Cancel</Text>
             </TouchableOpacity>
@@ -26,7 +26,7 @@ function addFocusSession() {
             <TouchableOpacity style={styles.buttonStyle} onPress={() => console.log('Start')}>
               <Text style={styles.buttonText}>Start</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     </SafeAreaProvider>

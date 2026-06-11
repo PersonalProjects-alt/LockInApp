@@ -25,6 +25,14 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         paddingTop: 5,
         fontFamily: 'Montserrat-ExtraLight',
+    },
+
+    todaysPlanText: {
+        color: '#ffffff',
+        paddingTop: 25,
+        fontWeight: '500',
+        fontSize: 17,
+        marginLeft: 7  
     }
 
 });

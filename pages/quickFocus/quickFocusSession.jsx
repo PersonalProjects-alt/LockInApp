@@ -41,7 +41,7 @@ function quickFocusSession() {
       <ScrollView style={[styles.background, { paddingTop: insets.top }]}>
         <View style={styles.header}>
           <Text style={styles.header_text}>Focus Session</Text>
-          <View style={styles.pickerContainer}>
+          {/* <View style={styles.pickerContainer}>
 
             <View style={styles.pickerColumn}>
               <Picker
@@ -85,13 +85,13 @@ function quickFocusSession() {
                 onValueChange={setSeconds}
               />
             </View>
-          </View>
-          {renderDefaultTimes()}
+          </View> */}
+          {/* {renderDefaultTimes()}
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.buttonStyle} onPress={() => console.log('Start')}>
               <Text style={styles.buttonText}>Start</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     </SafeAreaProvider>

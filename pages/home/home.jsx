@@ -2,6 +2,7 @@ import React from 'react'
 import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView } from 'react-native';
 import { styles } from './styles/home.ts'
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import QuickFocusSessionComponent from '../../components/FocusSession/quickFocusSessionComponent.jsx'
 import StreakCalendar from '../../components/streak_component/streaks_calendar.jsx';
 import SwipeCards from '../../components/swipableCards/swipeCards.jsx';
 import LinearGradient from 'react-native-linear-gradient';
@@ -36,9 +37,11 @@ function home() {
           <Text style={styles.subHeader_text}>{formatDate(new Date())}</Text>
         </View>
         <View>
-          <StreakCalendar />
+          <QuickFocusSessionComponent/>
+          <Text style={styles.todaysPlanText}>Today's Plan</Text>
+          {/* <StreakCalendar />
           <SwipeCards />
-          <ScreenOnTime/>
+          <ScreenOnTime/> */}
         </View>
         
 
