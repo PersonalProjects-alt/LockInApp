@@ -32,6 +32,7 @@ export const styles = StyleSheet.create({
         fontSize: 45,
         fontWeight: '400',
         paddingBottom: 20,
+        fontFamily: 'Montserrat-Medium',
     },
 
     btnContainer: {

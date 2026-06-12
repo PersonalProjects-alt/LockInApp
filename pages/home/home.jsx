@@ -3,12 +3,13 @@ import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView } from 'r
 import { styles } from './styles/home.ts'
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import QuickFocusSessionComponent from '../../components/FocusSession/quickFocusSessionComponent.jsx'
+import TodayPlan from '../../components/todayPlan/todayPlan.jsx'
 import StreakCalendar from '../../components/streak_component/streaks_calendar.jsx';
 import SwipeCards from '../../components/swipableCards/swipeCards.jsx';
 import LinearGradient from 'react-native-linear-gradient';
 import ScreenOnTime from '../../components/screenOnTime/screenOnTime.jsx'
 
-function home() {
+function home({ navigation }) {
   const insets = useSafeAreaInsets();
   const formatDate = (date) => {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -31,14 +32,17 @@ function home() {
 
   return (
     <SafeAreaProvider>
-      <ScrollView style={[styles.background, { paddingTop: insets.top }]}>
+      <ScrollView 
+      style={[styles.background, { paddingTop: insets.top }]}
+      showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.header_text}>Hello, Dare</Text>
           <Text style={styles.subHeader_text}>{formatDate(new Date())}</Text>
         </View>
         <View>
-          <QuickFocusSessionComponent/>
+          <QuickFocusSessionComponent navigation={navigation}/>
           <Text style={styles.todaysPlanText}>Today's Plan</Text>
+          <TodayPlan/>
           {/* <StreakCalendar />
           <SwipeCards />
           <ScreenOnTime/> */}

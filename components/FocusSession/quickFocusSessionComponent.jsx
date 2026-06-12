@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView, Pressabl
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient'
 import { styles } from './styles/quickFocusSessionStyle'
-function quickFocusSessionComponent() {
+function quickFocusSessionComponent({ navigation }) {
     const [sessionTime, setSessionTime] = useState(50)
     return (
         <View style={styles.viewContainer}>
@@ -12,7 +12,7 @@ function quickFocusSessionComponent() {
                 <Text style={styles.subHeaderText}>Session Time</Text>
                 <Text style={styles.sessionTimeText}>{sessionTime}m</Text>
                 <View style={styles.btnContainer}>
-                    <Pressable style={styles.editSessionBtn}>
+                    <Pressable style={styles.editSessionBtn} onPress={() => navigation.replace('QuickSession')}>
                         <Text style={styles.editSesionText}>Edit Session</Text>
                     </Pressable>
 
