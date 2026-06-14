@@ -40,5 +40,12 @@ export const styles = StyleSheet.create({
         paddingRight: 20,
     },
 
+    sessionDurationText: {
+        color: '#ffffff',
+        fontSize: 18,
+        fontFamily: 'Montserrat-SemiBold',
+
+    }
+
 
 });

@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     viewContainer: {
-        paddingTop: 25
+        paddingTop: 25,
+        paddingBottom: 30
 
     },
 

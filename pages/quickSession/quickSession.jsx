@@ -3,11 +3,13 @@ import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView, Image, P
 import { styles } from './styles/quickSessionStyles.ts'
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import BlockedAppsComponent from '../../components/blockedApps/blockedAppsComponent.jsx'
+import AddTimeComponent from '../../components/FocusSession/addTimeComponent.jsx'
 
 import arrow from '../../assets/Icons/arrowLeft.png'
 
 function quickSession({ navigation }) {
     const insets = useSafeAreaInsets();
+    const [timeCounter, setTimeCounter] = useState(10)
     return (
         <SafeAreaProvider>
             <ScrollView
@@ -21,6 +23,10 @@ function quickSession({ navigation }) {
                 </View>
                 <View>
                     <BlockedAppsComponent/>
+
+                    <Text style={styles.sessionDurationText}>Session Duration</Text>
+
+                    <AddTimeComponent/>
                 </View>
             </ScrollView>
         </SafeAreaProvider>

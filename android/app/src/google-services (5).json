@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666256528000",
+    "project_id": "lockinapp-16f79",
+    "storage_bucket": "lockinapp-16f79.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666256528000:android:c868484b28707204040c65",
+        "android_client_info": {
+          "package_name": "com.focusblocker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666256528000-cur9h0hsd3puc4i09blae7fkuhe5jh8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo46u9Pqh11GkNlgKZ45IDtFnJHXDmKbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666256528000-cur9h0hsd3puc4i09blae7fkuhe5jh8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
