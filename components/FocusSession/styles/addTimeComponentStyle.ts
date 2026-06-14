@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     viewContainer: {
         paddingTop: 25,
-        paddingBottom: 30
 
     },
 
@@ -14,53 +13,47 @@ export const styles = StyleSheet.create({
         borderWidth: 1
     },
 
-    headerText: {
-        color: 'white',
-        fontSize: 17,
-        paddingBottom: 10,
-        fontWeight: '500',
-        fontFamily: 'Montserrat-SemiBold',
-    },
-
-    subHeaderText: {
-        color: 'white',
-        fontSize: 15,
-        paddingBottom: 30,
-        fontWeight: '300',
-        fontFamily: 'Montserrat-Light',
+    timeContainerView: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        gap: 20,
+        flex: 1
     },
 
     plusIcon: {
-        width: 40,
-        height: 40,
+        width: 30,
+        height: 30,
         tintColor: '#ffffff',
         resizeMode: 'contain',
     },
 
     minusIcon: {
-        width: 50,
-        height: 50,
+        width: 25,
+        height: 30,
         tintColor: '#ffffff',
         resizeMode: 'contain',
     },
 
-    addMoreText: {
-        color: '#ffffff',
-        fontSize: 11,
-        fontFamily: 'Montserrat-Medium',
-        textAlign: 'center',
-    },
-
     addMoreBtn: {
-        width: 78,
-        height: 85,
+        width: 58,
+        height: 58,
         borderRadius: 18,
         borderWidth: 1,
         borderColor: '#242526',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 10,
     },
+
+
+    durationTimeText: {
+        color: 'white',
+        fontSize: 40,
+        fontWeight: '400',
+        fontFamily: 'Montserrat-Regular',
+    },
+
+
 
 
 

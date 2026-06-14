@@ -17,13 +17,13 @@ export const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        gap: 30
+        gap: 20,
+        flex: 1
     },
 
-
     plusIcon: {
-        width: 37,
-        height: 37,
+        width: 30,
+        height: 30,
         tintColor: '#ffffff',
         resizeMode: 'contain',
     },
