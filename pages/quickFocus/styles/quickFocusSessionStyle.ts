@@ -15,10 +15,11 @@ export const styles = StyleSheet.create({
 
     header_text: {
         color: 'white',
-        fontSize: 30,
-        paddingTop: 20,
+        fontSize: 20,
+        textAlign: 'center',
         fontFamily: 'Montserrat-SemiBold',
     },
+
 
     pickerContainer: {
         flexDirection: 'row',

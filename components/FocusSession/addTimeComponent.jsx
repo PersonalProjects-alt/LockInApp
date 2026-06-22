@@ -18,7 +18,7 @@ function addTimeComponent() {
                         </LinearGradient>
                     </Pressable>
 
-                    <Text style={styles.durationTimeText}>{timeCounter}min</Text>
+                    <Text style={styles.durationTimeText}>{timeCounter} min</Text>
 
                     <Pressable onPress={() => setTimeCounter(timeCounter + 5)}>
                         <LinearGradient colors={['#111213', '#08080A']} style={styles.addMoreBtn} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}>

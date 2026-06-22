@@ -5,7 +5,14 @@ export const styles = StyleSheet.create({
         backgroundColor: '#000',
         flex: 1,
         paddingHorizontal: 10,
-        fontFamily: 'Montserrat-VariableFont_wght',   
+        fontFamily: 'Montserrat-VariableFont_wght',
+    },
+
+    container: {
+        padding: 20,
+        borderRadius: 25,
+        borderColor: '#1D1E1E',
+        borderWidth: 1
     },
 
     header: {
@@ -15,15 +22,17 @@ export const styles = StyleSheet.create({
 
     header_text: {
         color: 'white',
-        fontSize: 30,
-        paddingTop: 20,
+        fontSize: 20,
+        textAlign: 'center',
         fontFamily: 'Montserrat-SemiBold',
+        marginBottom: 20,
     },
+
 
     addTimeContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        alignItems: 'center', 
+        alignItems: 'center',
     },
 
     buttonView: {
@@ -47,7 +56,132 @@ export const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-    }
+    },
+
+    sessionNameContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 20
+    },
+
+    pencilIcon: {
+        width: 22,
+        height: 22,
+        tintColor: '#ffffff',
+    },
+
+    sessionNameTitle: {
+        fontSize: 17,
+        fontWeight: '500',
+        color: '#ffffff',
+    },
+
+    repeatContainer: {
+        width: '100%',
+        borderRadius: 20,
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        marginTop: 18,
+        borderWidth: 1,
+        borderColor: '#1F2024',
+    },
+
+    repeatTitle: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: '700',
+        marginBottom: 14,
+    },
+
+    daysRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+
+    dayCircle: {
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    dayCircleSelected: {
+        backgroundColor: '#FFFFFF',
+    },
+
+    dayCircleUnselected: {
+        backgroundColor: '#050506',
+        borderWidth: 1,
+        borderColor: '#2A2B30',
+    },
+
+    dayText: {
+        fontSize: 15,
+        fontWeight: '700',
+    },
+
+    dayTextSelected: {
+        color: '#000000',
+    },
+
+    dayTextUnselected: {
+        color: '#FFFFFF',
+    },
+
+    sessionNameInput: {
+        color: '#FFFFFF',
+        fontSize: 14,
+        paddingVertical: 0,
+        marginTop: 4,
+    },
+
+    timeContainer: {
+        marginBottom: 150
+    },
+
+    timeTitle: {
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: '500',
+        marginBottom: 10,
+    },
+
+    timeRow: {
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        marginTop: 2,
+    },
+
+    timeLabel: {
+        color: '#6F6F76',
+        fontSize: 12,
+        marginBottom: 6,
+    },
+
+    timeButton: {
+        backgroundColor: '#14171B',
+        borderRadius: 6,
+        paddingVertical: 7,
+        paddingHorizontal: 9,
+        minWidth: 84,
+        alignItems: 'center',
+    },
+
+    timeButtonText: {
+        color: '#FFFFFF',
+        fontSize: 18,
+        fontWeight: '500',
+    },
+
+    timeDivider: {
+        width: 28,
+        height: 1,
+        backgroundColor: '#D9D9D9',
+        marginHorizontal: 22,
+        marginBottom: 17,
+    },
 
 
 });

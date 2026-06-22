@@ -48,9 +48,11 @@ export const styles = StyleSheet.create({
 
     durationTimeText: {
         color: 'white',
-        fontSize: 40,
+        fontSize: 35,
         fontWeight: '400',
         fontFamily: 'Montserrat-Regular',
+        textAlign: 'center',
+        alignSelf: 'center'
     },
 
 

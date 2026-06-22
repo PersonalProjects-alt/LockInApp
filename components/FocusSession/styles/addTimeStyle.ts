@@ -28,6 +28,13 @@ export const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
 
+    minusIcon: {
+        width: 30,
+        height: 30,
+        tintColor: '#ffffff',
+        resizeMode: 'contain',
+    },
+
     addMoreBtn: {
         width: 58,
         height: 58,
