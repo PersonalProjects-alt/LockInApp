@@ -25,7 +25,7 @@ const days = [
 ]
 
 
-function NewFocusSession() {
+function NewFocusSession({navigation}) {
   const insets = useSafeAreaInsets()
 
   const createTime = (hour, minute) => {
@@ -147,7 +147,7 @@ function NewFocusSession() {
             </View>
           </LinearGradient>
 
-          <BlockedAppsComponent />
+          <BlockedAppsComponent navigation={navigation}/>
 
           <LinearGradient
             colors={['#111213', '#08080A']}

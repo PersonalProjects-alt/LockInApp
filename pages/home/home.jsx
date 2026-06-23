@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView } from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme, View, Text, ScrollView, NativeModules, Pressable } from 'react-native';
 import { styles } from './styles/home.ts'
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import QuickFocusSessionComponent from '../../components/FocusSession/quickFocusSessionComponent.jsx'
@@ -34,6 +34,8 @@ function home({ navigation }) {
 
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(true);
+  const { CalendarModule } = NativeModules;
+  const { AndroidAppsModule } = NativeModules;
 
   // Handle user state changes
   function handleAuthStateChanged(user) {
@@ -55,6 +57,9 @@ function home({ navigation }) {
         showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.header_text}>Hello, {user.displayName}</Text>
+          <Pressable style={{ backgroundColor: 'white' }} onPress={() => AndroidAppsModule.androidAppsEvent()}>
+            <Text style={{ color: 'white' }}>Hellow World</Text>
+          </Pressable>
           <Text style={styles.subHeader_text}>{formatDate(new Date())}</Text>
         </View>
         <View>
@@ -65,6 +70,9 @@ function home({ navigation }) {
           <SwipeCards />
           <ScreenOnTime/> */}
         </View>
+        <Pressable style={{ backgroundColor: 'white' }} onPress={() => CalendarModule.createCalendarEvent('testName', 'testLocation')}>
+          <Text style={{ color: 'white' }}>Hellow World</Text>
+        </Pressable>
 
 
 

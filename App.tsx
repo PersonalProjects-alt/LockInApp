@@ -15,6 +15,7 @@ import Onboarding from './components/onboarding/onboarding'
 import SignIn from './components/onboarding/sign_in_screen'
 import SignUp from './components/onboarding/sign_up_screen'
 import QuickSession from './pages/quickSession/quickSession'
+import ListApp from './pages/addFocus/listOfApps'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -155,6 +156,8 @@ function App() {
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="QuickSession" component={QuickSession} />
+          <Stack.Screen name="ListApp" component={ListApp} />
+          <Stack.Screen name="addFocusSession" component={addFocusSession} />
           <Stack.Screen name="MainTabs" component={MainTabs} />
 
         </Stack.Navigator>
