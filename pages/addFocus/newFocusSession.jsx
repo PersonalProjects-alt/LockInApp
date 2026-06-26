@@ -47,6 +47,7 @@ function NewFocusSession({navigation}) {
   const [startTime, setStartTime] = useState(() => createTime(9, 0))
   const [endTime, setEndTime] = useState(() => createTime(10, 0))
   const [activeTimePicker, setActiveTimePicker] = useState(null)
+  const [selectedApps, setSelectedApps] = useState([]);
 
   const handleTimeChange = (event, selectedDate) => {
     if (Platform.OS === 'android') {

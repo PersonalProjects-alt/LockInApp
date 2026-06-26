@@ -10,6 +10,7 @@ import arrow from '../../assets/Icons/arrowLeft.png'
 function quickSession({ navigation }) {
     const insets = useSafeAreaInsets();
     const [timeCounter, setTimeCounter] = useState(10)
+
     return (
         <SafeAreaProvider>
             <ScrollView
@@ -22,7 +23,7 @@ function quickSession({ navigation }) {
                     <Text style={styles.header_text}>Quick Session</Text>
                 </View>
                 <View>
-                    <BlockedAppsComponent/>
+                    <BlockedAppsComponent navigation={navigation}/>
 
                     <Text style={styles.sessionDurationText}>Session Duration</Text>
 

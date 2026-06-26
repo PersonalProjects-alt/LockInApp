@@ -38,6 +38,20 @@ export const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
 
+    appIcon: {
+        width: 40,
+        height: 40,
+        marginBottom: 8,
+    },
+
+    appListContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 15,
+        width: 'auto',
+        flexWrap: 'wrap'
+    },
+
     addMoreText: {
         color: '#ffffff',
         fontSize: 11,
@@ -55,6 +69,27 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 10,
     },
+
+    minusIcon: {
+        width: 4,
+        height: 4,
+        padding: 8,
+        alignSelf: 'center',
+        marginTop: 2
+        
+    },
+
+    removeBtn: {
+        backgroundColor: '#000000',
+        borderRadius: 999,
+        width: 22,
+        height: 22,
+        zIndex: 20,
+        position: 'absolute',
+        top: -10,
+        left: -5
+        
+    }
 
 
 

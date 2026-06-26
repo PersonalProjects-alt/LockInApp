@@ -5,6 +5,7 @@
  * @format
  */
 import React, { useState, useEffect } from 'react'
+import { createMMKV } from 'react-native-mmkv'
 import { StatusBar, StyleSheet, useColorScheme, View, Text, Image } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets, } from 'react-native-safe-area-context';
 import Home from './pages/home/home'
@@ -33,6 +34,8 @@ import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+export const storage = createMMKV()
 
 function MainTabs() {
   const isDarkMode = useColorScheme() === 'dark';

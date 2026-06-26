@@ -57,9 +57,9 @@ function home({ navigation }) {
         showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.header_text}>Hello, {user.displayName}</Text>
-          <Pressable style={{ backgroundColor: 'white' }} onPress={() => AndroidAppsModule.androidAppsEvent()}>
+          {/* <Pressable style={{ backgroundColor: 'white' }} onPress={() => AndroidAppsModule.androidAppsEvent()}>
             <Text style={{ color: 'white' }}>Hellow World</Text>
-          </Pressable>
+          </Pressable> */}
           <Text style={styles.subHeader_text}>{formatDate(new Date())}</Text>
         </View>
         <View>
