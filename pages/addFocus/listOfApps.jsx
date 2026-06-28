@@ -84,8 +84,8 @@ function listOfApps({ navigation }) {
         return 'App';
     };
 
-    useEffect(() => {
-        if (isFirstRender.current) {
+    useEffect(() => { 
+        if (isFirstRender.current) { //protectinf first run from wiping storage
             isFirstRender.current = false
             return
         }
@@ -99,8 +99,6 @@ function listOfApps({ navigation }) {
             if (Array.isArray(parsed)) setSelectedApps(parsed)
         }
     }, [])
-
-    console.log('Saved App mmkv', selectedApps)
 
     const renderApp = ({ item, index }) => {
         const id = item.name;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   View,
   Text,
@@ -13,6 +13,8 @@ import DateTimePicker from '@react-native-community/datetimepicker'
 import { styles } from './styles/addFocusSessionStyle.ts'
 import BlockedAppsComponent from '../../components/blockedApps/blockedAppsComponent.jsx'
 import pencilIcon from '../../assets/Icons/pencil.png'
+import { storage } from '../../App.tsx';
+import { useFocusEffect } from '@react-navigation/native';
 
 const days = [
   { label: 'M', value: 'Monday' },
@@ -25,7 +27,8 @@ const days = [
 ]
 
 
-function NewFocusSession({navigation}) {
+function NewFocusSession({ navigation }) {
+  const [savedAppList, setSavedAppList] = useState([])
   const insets = useSafeAreaInsets()
 
   const createTime = (hour, minute) => {
@@ -47,7 +50,39 @@ function NewFocusSession({navigation}) {
   const [startTime, setStartTime] = useState(() => createTime(9, 0))
   const [endTime, setEndTime] = useState(() => createTime(10, 0))
   const [activeTimePicker, setActiveTimePicker] = useState(null)
-  const [selectedApps, setSelectedApps] = useState([]);
+
+  //retrieve saved apps
+  useFocusEffect(
+    React.useCallback(() => {
+      const savedApps = storage.getString('App')
+      if (savedApps) {
+        setSavedAppList(JSON.parse(savedApps))
+      }
+    }, [])
+  )
+  //debugging
+  // console.log(savedAppList)
+
+  function saveSession() {
+    storage.set('FocusSessionName', focusSessionName)
+    storage.set('SelectedDays', selectedDays.toString())
+    storage.set('StartTime', startTime.toString())
+    storage.set('EndTime', endTime.toString())
+
+    const savedSessionName = storage.getString('FocusSessionName')
+    const savedSelectedDays = storage.getString('SelectedDays')
+    const savedStartTime = storage.getString('StartTime')
+    const savedEndTime = storage.getString('EndTime')
+
+    console.log(savedAppList)
+    console.log(savedSessionName)
+    console.log(savedSelectedDays)
+    console.log(savedStartTime)
+    console.log(savedEndTime)
+
+  }
+
+
 
   const handleTimeChange = (event, selectedDate) => {
     if (Platform.OS === 'android') {
@@ -82,7 +117,7 @@ function NewFocusSession({navigation}) {
         showsVerticalScrollIndicator={false}
         style={[styles.background, { paddingTop: insets.top }]}
       >
-        <View style={styles.header}>
+        <View style={[styles.header, { marginBottom: 150 }]}>
           <Text style={styles.header_text}>New Focus Session</Text>
 
           <LinearGradient
@@ -148,7 +183,7 @@ function NewFocusSession({navigation}) {
             </View>
           </LinearGradient>
 
-          <BlockedAppsComponent navigation={navigation}/>
+          <BlockedAppsComponent navigation={navigation} />
 
           <LinearGradient
             colors={['#111213', '#08080A']}
@@ -165,6 +200,7 @@ function NewFocusSession({navigation}) {
                 <Pressable
                   style={styles.timeButton}
                   onPress={() => setActiveTimePicker('start')}
+
                 >
                   <Text style={styles.timeButtonText}>{formatTime(startTime)}</Text>
                 </Pressable>
@@ -194,6 +230,9 @@ function NewFocusSession({navigation}) {
               />
             )}
           </LinearGradient>
+          <Pressable style={styles.editSessionBtn} onPress={() => saveSession()}>
+            <Text style={styles.editSessionBtnText}>Save Session</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaProvider>

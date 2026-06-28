@@ -138,7 +138,7 @@ export const styles = StyleSheet.create({
     },
 
     timeContainer: {
-        marginBottom: 150
+        marginBottom: 20
     },
 
     timeTitle: {
@@ -183,5 +183,19 @@ export const styles = StyleSheet.create({
         marginBottom: 17,
     },
 
+    editSessionBtn: {
+        backgroundColor: '#46D15C',
+        padding: 13,
+        borderRadius: 15,
+        height: 60,
+        justifyContent: 'center',
+        fontFamily: 'Montserrat-Medium',
+    },
+
+    editSessionBtnText: {
+        fontFamily: 'Montserrat-SemiBold',
+        fontSize: 16,
+        textAlign: 'center'
+    }
 
 });
