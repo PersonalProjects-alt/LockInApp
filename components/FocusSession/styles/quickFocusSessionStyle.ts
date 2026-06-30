@@ -35,6 +35,13 @@ export const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Medium',
     },
 
+    minutesText: {
+        fontSize: 30,
+        fontWeight: '300',
+        paddingBottom: 20,
+        color: 'white',
+    },
+
     btnContainer: {
         display: 'flex',
         flexDirection: 'row',

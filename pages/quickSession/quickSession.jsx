@@ -40,15 +40,19 @@ function quickSession({ navigation }) {
                 'Duration': timeCounter
             })
 
-            console.log(savedQuickSessionInfo)
+            // console.log(savedQuickSessionInfo)
+            setSavedQucikSessionInfo(quickFocusSessionInfo)
+
+            //then set it to storage
+            storage.set('QuickFocusSession', JSON.stringify(quickFocusSessionInfo))
         } else {
             Alert.alert("Missing Information")
         }
-    
-        setSavedQucikSessionInfo(quickFocusSessionInfo)
 
-        //then set it to storage
-        storage.set('QuickFocusSession', JSON.stringify(quickFocusSessionInfo))
+        // setSavedQucikSessionInfo(quickFocusSessionInfo)
+
+        // //then set it to storage
+        // storage.set('QuickFocusSession', JSON.stringify(quickFocusSessionInfo))
 
         Alert.alert("Successfully updated Quick Focus Session")
 

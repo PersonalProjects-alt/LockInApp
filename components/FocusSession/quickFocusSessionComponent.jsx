@@ -27,7 +27,10 @@ function quickFocusSessionComponent({ navigation }) {
             <LinearGradient colors={['#111213', '#08080A']} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}>
                 <Text style={styles.headerText}>Quick Session</Text>
                 <Text style={styles.subHeaderText}>Session Time</Text>
-                <Text style={styles.sessionTimeText}>{savedQuickFocusSessionInfo[0]?.Duration}m</Text>
+                
+                <Text style={styles.sessionTimeText}>{savedQuickFocusSessionInfo[0]?.Duration} 
+                    <Text style={styles.minutesText}> min</Text>
+                    </Text>
                 <View style={styles.btnContainer}>
                     <Pressable style={styles.editSessionBtn} onPress={() => navigation.replace('QuickSession')}>
                         <Text style={styles.editSesionText}>Edit Session</Text>
