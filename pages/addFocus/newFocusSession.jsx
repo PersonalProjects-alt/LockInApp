@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   Pressable,
+  Alert,
 } from 'react-native'
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context'
 import LinearGradient from 'react-native-linear-gradient'
@@ -29,6 +30,7 @@ const days = [
 
 function NewFocusSession({ navigation }) {
   const [savedAppList, setSavedAppList] = useState([])
+  const [savedFocusSessionInfo, setSavedFocusSessionInfo] = useState([])
   const insets = useSafeAreaInsets()
 
   const createTime = (hour, minute) => {
@@ -63,23 +65,71 @@ function NewFocusSession({ navigation }) {
   //debugging
   // console.log(savedAppList)
 
-  function saveSession() {
-    storage.set('FocusSessionName', focusSessionName)
-    storage.set('SelectedDays', selectedDays.toString())
-    storage.set('StartTime', startTime.toString())
-    storage.set('EndTime', endTime.toString())
+  // function saveSession() {
+  //   //adding all the information to the array 
+  //   let savedAppsBool = false
+  //   let focusSessionNameBool = false
+  //   let selectedDaysBool = false
+  //   let startTimeBool = false
+  //   let endTimeBool = false
 
-    const savedSessionName = storage.getString('FocusSessionName')
-    const savedSelectedDays = storage.getString('SelectedDays')
-    const savedStartTime = storage.getString('StartTime')
-    const savedEndTime = storage.getString('EndTime')
 
-    console.log(savedAppList)
-    console.log(savedSessionName)
-    console.log(savedSelectedDays)
-    console.log(savedStartTime)
-    console.log(savedEndTime)
+  //   if (savedAppList) {
+  //     savedFocuseSessionInfo.push(savedAppList)
+  //     savedAppsBool = true
+  //   } else if (!savedAppList) {
+  //     Alert.alert("There are no apps added to this focus session")
+  //   }
 
+  //   if (focusSessionName.length > 0) {
+  //     savedFocuseSessionInfo.push(focusSessionName)
+  //     focusSessionNameBool = true
+  //   } else {
+  //     Alert.alert("There is no title added to this focus session")
+  //   }
+
+  //   if (selectedDays) {
+  //     savedFocuseSessionInfo.push(selectedDays.toString())
+  //     selectedDaysBool = true
+  //   } else {
+  //     Alert.alert("There is no selected days added to this focus session")
+  //   }
+
+  //   if (startTime) {
+  //     savedFocuseSessionInfo.push(startTime.toString())
+  //     startTimeBool = true
+  //   } else {
+  //     Alert.alert("There is no start time added to this focus session")
+  //   }
+
+  //   if (endTime) {
+  //     savedFocuseSessionInfo.push(endTime.toString())
+  //     endTimeBool = true
+  //   } else {
+  //     Alert.alert("There is no end time added to this focus session")
+  //   }
+
+  //   if (savedAppsBool, focusSessionNameBool, selectedDaysBool, startTimeBool, endTimeBool)
+  //     console.log(savedFocuseSessionInfo)
+
+  // }
+
+  const saveSession = () => {
+    let focusSessionInfo = savedFocusSessionInfo
+
+    if (savedAppList && focusSessionName.length > 0 && selectedDays.length > 0 && startTime && endTime) {
+      focusSessionInfo.push({
+        'Apps': savedAppList,
+        'FocusSessionName': focusSessionName,
+        'SelectedDays': selectedDays,
+        'StartTime': startTime,
+        'EndTime': endTime,
+      })
+    } else {
+      Alert.alert("Missing information")
+    }
+
+    setSavedFocusSessionInfo(focusSessionInfo)
   }
 
 
