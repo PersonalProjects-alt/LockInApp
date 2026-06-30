@@ -93,7 +93,7 @@ function MainTabs() {
             }}
           /> */}
 
-        <Tab.Screen
+        {/* <Tab.Screen
           name="NewFocusSession"
           component={addFocusSession}
           options={{
@@ -103,7 +103,7 @@ function MainTabs() {
               </View>
             )
           }}
-        />
+        /> */}
 
         <Tab.Screen
           name="QuickFocusSession"

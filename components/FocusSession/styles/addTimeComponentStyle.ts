@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     },
 
     minusIcon: {
-        width: 25,
+        width: 20,
         height: 30,
         tintColor: '#ffffff',
         resizeMode: 'contain',
@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
 
     durationTimeText: {
         color: 'white',
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: '400',
         fontFamily: 'Montserrat-Regular',
         textAlign: 'center',

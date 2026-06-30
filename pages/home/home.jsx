@@ -8,6 +8,7 @@ import StreakCalendar from '../../components/streak_component/streaks_calendar.j
 import SwipeCards from '../../components/swipableCards/swipeCards.jsx';
 import LinearGradient from 'react-native-linear-gradient';
 import ScreenOnTime from '../../components/screenOnTime/screenOnTime.jsx'
+import AddFocusSessionComponent from '../../components/FocusSession/addFocusSessionComponent.jsx'
 
 import { getAuth, onAuthStateChanged } from '@react-native-firebase/auth';
 
@@ -64,6 +65,7 @@ function home({ navigation }) {
         </View>
         <View>
           <QuickFocusSessionComponent navigation={navigation} />
+          <AddFocusSessionComponent navigation={navigation}/>
           <Text style={styles.todaysPlanText}>Today's Plan</Text>
           <TodayPlan />
           {/* <StreakCalendar />

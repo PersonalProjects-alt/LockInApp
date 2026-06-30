@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         marginTop: 40,
-        marginBottom: 30
+        marginBottom: 20
     },
 
     header_text: {
@@ -45,7 +45,23 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: 'Montserrat-SemiBold',
 
-    }
+    },
+
+    editSessionBtn: {
+        backgroundColor: '#ffffff',
+        padding: 20,
+        borderRadius: 10,
+        flex: 1,
+        marginTop: 40
+    },
+
+    editSesionText: {
+        color: '#000000',
+        fontWeight: '600',
+        fontSize: 16,
+        textAlign: 'center'
+    },
+
 
 
 });

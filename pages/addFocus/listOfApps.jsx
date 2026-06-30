@@ -34,6 +34,7 @@ function listOfApps({ navigation }) {
         return () => { mounted = false }
     }, [])
 
+    //filteringApps
     const filteredApps = useMemo(() => {
         return apps.filter(app =>
             app.name?.toLowerCase().includes(searchApp.toLowerCase())
@@ -85,7 +86,7 @@ function listOfApps({ navigation }) {
     };
 
     useEffect(() => { 
-        if (isFirstRender.current) { //protectinf first run from wiping storage
+        if (isFirstRender.current) { //protecting first run from wiping storage
             isFirstRender.current = false
             return
         }

@@ -16,8 +16,15 @@ export const styles = StyleSheet.create({
     },
 
     header: {
-        paddingHorizontal: 10,
-        paddingTop: 30,
+        // paddingHorizontal: 10,
+        // paddingTop: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: 30,
+        marginBottom: 20
     },
 
     header_text: {
@@ -26,6 +33,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: 'Montserrat-SemiBold',
         marginBottom: 20,
+        marginTop: 15,
     },
 
 
@@ -51,6 +59,21 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         paddingVertical: 12,
         paddingHorizontal: 40
+    },
+
+    arrowIcon: {
+        width: 25,
+        height: 25,
+        tintColor: '#ffffff',
+    },
+
+    backButton: {
+        position: 'absolute',
+        left: 0,
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingRight: 20,
     },
 
     buttonText: {

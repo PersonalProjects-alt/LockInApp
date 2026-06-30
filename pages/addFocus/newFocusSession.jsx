@@ -14,8 +14,10 @@ import DateTimePicker from '@react-native-community/datetimepicker'
 import { styles } from './styles/addFocusSessionStyle.ts'
 import BlockedAppsComponent from '../../components/blockedApps/blockedAppsComponent.jsx'
 import pencilIcon from '../../assets/Icons/pencil.png'
+import crossIcon from '../../assets/Icons/cross.png'
 import { storage } from '../../App.tsx';
 import { useFocusEffect } from '@react-navigation/native';
+import arrow from '../../assets/Icons/arrowLeft.png'
 
 const days = [
   { label: 'M', value: 'Monday' },
@@ -65,55 +67,6 @@ function NewFocusSession({ navigation }) {
   //debugging
   // console.log(savedAppList)
 
-  // function saveSession() {
-  //   //adding all the information to the array 
-  //   let savedAppsBool = false
-  //   let focusSessionNameBool = false
-  //   let selectedDaysBool = false
-  //   let startTimeBool = false
-  //   let endTimeBool = false
-
-
-  //   if (savedAppList) {
-  //     savedFocuseSessionInfo.push(savedAppList)
-  //     savedAppsBool = true
-  //   } else if (!savedAppList) {
-  //     Alert.alert("There are no apps added to this focus session")
-  //   }
-
-  //   if (focusSessionName.length > 0) {
-  //     savedFocuseSessionInfo.push(focusSessionName)
-  //     focusSessionNameBool = true
-  //   } else {
-  //     Alert.alert("There is no title added to this focus session")
-  //   }
-
-  //   if (selectedDays) {
-  //     savedFocuseSessionInfo.push(selectedDays.toString())
-  //     selectedDaysBool = true
-  //   } else {
-  //     Alert.alert("There is no selected days added to this focus session")
-  //   }
-
-  //   if (startTime) {
-  //     savedFocuseSessionInfo.push(startTime.toString())
-  //     startTimeBool = true
-  //   } else {
-  //     Alert.alert("There is no start time added to this focus session")
-  //   }
-
-  //   if (endTime) {
-  //     savedFocuseSessionInfo.push(endTime.toString())
-  //     endTimeBool = true
-  //   } else {
-  //     Alert.alert("There is no end time added to this focus session")
-  //   }
-
-  //   if (savedAppsBool, focusSessionNameBool, selectedDaysBool, startTimeBool, endTimeBool)
-  //     console.log(savedFocuseSessionInfo)
-
-  // }
-
   const saveSession = () => {
     let focusSessionInfo = savedFocusSessionInfo
 
@@ -122,14 +75,23 @@ function NewFocusSession({ navigation }) {
         'Apps': savedAppList,
         'FocusSessionName': focusSessionName,
         'SelectedDays': selectedDays,
-        'StartTime': startTime,
-        'EndTime': endTime,
+        'StartTime': startTime.getTime(),
+        'EndTime': endTime.getTime(),
       })
+
+      console.log(savedFocusSessionInfo)
     } else {
       Alert.alert("Missing information")
     }
 
     setSavedFocusSessionInfo(focusSessionInfo)
+
+    //then set it to storage
+
+    navigation.replace('MainTabs')
+
+    Alert.alert("Successfully added Focus Session")
+
   }
 
 
@@ -167,8 +129,13 @@ function NewFocusSession({ navigation }) {
         showsVerticalScrollIndicator={false}
         style={[styles.background, { paddingTop: insets.top }]}
       >
-        <View style={[styles.header, { marginBottom: 150 }]}>
-          <Text style={styles.header_text}>New Focus Session</Text>
+        <View style={{ marginBottom: 150 }}>
+          <View style={styles.header}>
+            <Pressable style={styles.backButton} onPress={() => navigation.replace('MainTabs')}>
+              <Image source={arrow} style={styles.arrowIcon} />
+            </Pressable>
+            <Text style={styles.header_text}>New Focus Session</Text>
+          </View>
 
           <LinearGradient
             colors={['#111213', '#08080A']}
