@@ -8,7 +8,7 @@ import { storage } from '../../App';
 
 
 function quickFocusSessionComponent({ navigation }) {
-    const [savedQuickFocusSessionInfo, setSavedQuickFocusSessionInfo] = useState([])
+    const [savedQuickFocusSessionInfo, setSavedQuickFocusSessionInfo] = useState({})
 
     useFocusEffect(
         React.useCallback(() => {
@@ -28,7 +28,7 @@ function quickFocusSessionComponent({ navigation }) {
                 <Text style={styles.headerText}>Quick Session</Text>
                 <Text style={styles.subHeaderText}>Session Time</Text>
                 
-                <Text style={styles.sessionTimeText}>{savedQuickFocusSessionInfo[0]?.Duration} 
+                <Text style={styles.sessionTimeText}>{savedQuickFocusSessionInfo?.Duration} 
                     <Text style={styles.minutesText}> min</Text>
                     </Text>
                 <View style={styles.btnContainer}>

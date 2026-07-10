@@ -18,7 +18,8 @@ class MyAppPackage : ReactPackage {
     ): MutableList<NativeModule> {
         return mutableListOf(
             CalendarModule(reactContext),
-            AndroidApps(reactContext)
+            AndroidApps(reactContext),
+            BlockerModuleClass(reactContext)
         )
     }
 }

@@ -11,7 +11,7 @@ import arrow from '../../assets/Icons/arrowLeft.png'
 
 function quickSession({ navigation }) {
     const insets = useSafeAreaInsets();
-    const [timeCounter, setTimeCounter] = useState(10)
+    // const [timeCounter, setTimeCounter] = useState(10)
     const [savedAppList, setSavedAppList] = useState([])
     const [savedQuickSessionInfo, setSavedQucikSessionInfo] = useState([])
     const isFirstRender = useRef(true)
@@ -25,26 +25,26 @@ function quickSession({ navigation }) {
                 setSavedAppList(JSON.parse(savedApps))
             }
 
-            if (savedTime) {
-                setTimeCounter(savedTime)
-            }
+            // if (savedTime) {
+            //     setTimeCounter(savedTime)
+            // }
         }, [])
     )
 
     const saveQuickSession = () => {
         let quickFocusSessionInfo = [...savedQuickSessionInfo] //spread create new array
-
-        if (savedAppList.length > 0 && timeCounter >= 5) {
-            quickFocusSessionInfo.push({
-                'Apps': savedAppList,
-                'Duration': timeCounter
-            })
+        const savedTime = storage.getNumber('Duration')
+        if (savedAppList.length > 0 && savedTime >= 5) {
+            storage.set('QuickFocusSession', JSON.stringify({
+                Apps: savedAppList,
+                Duration: savedTime
+            }))
 
             // console.log(savedQuickSessionInfo)
             setSavedQucikSessionInfo(quickFocusSessionInfo)
 
             //then set it to storage
-            storage.set('QuickFocusSession', JSON.stringify(quickFocusSessionInfo))
+            // storage.set('QuickFocusSession', JSON.stringify(quickFocusSessionInfo))
         } else {
             Alert.alert("Missing Information")
         }
